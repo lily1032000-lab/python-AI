@@ -1,0 +1,2 @@
+git add "TEST A.txt"
+git commit -m "Add TEST A"
