@@ -1,3 +1,2 @@
-git add README.md "TEST A"
-git commit -m "Update text"
-git push origin main
+git add "TEST A.txt"
+git commit -m "Add TEST A"
