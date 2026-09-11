@@ -1,2 +1,5 @@
-git add "TEST A.txt"
-git commit -m "Add TEST A"
+# Luu noi dung len GitHub
+# Sua README.md hoac file "TEST A", sau do chay cac lenh nay:
+git add README.md "TEST A"
+git commit -m "Update text"
+git push origin main
