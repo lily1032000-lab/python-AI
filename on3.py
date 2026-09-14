@@ -1,14 +1,26 @@
 payload_box = [
-    "short_cmd",                        # Câu này ngắn, loại!
-        "this_is_a_very_long_payload_text", # Câu này dài nhưng không có chữ "bypass", loại!
-        "execute_order_99_and_bypass_now"  # SIÊU VŨ KHÍ: Thỏa mãn cả 2 điều kiện!
-    ]
-print ("--------- ĐÁM MÂY MỚI --------")
+    "short",              # Ngắn hơn 10 -> Bị loại ngay ở Tầng 1
+    "execute_order_99",   # Dài hơn 10, nhưng không có admin/bypass -> Bị loại ở Tầng 2
+    "admin_login_code",   # Dài hơn 10 VÀ có chứa admin -> VƯỢT QUA!
+    "bypass_all_firewall" # Dài hơn 10 VÀ có chứa bypass -> VƯỢT QUA!
+]
 
+print("=========BẮT ĐẦU THÔI ==============")
 for current_payload in payload_box:
-    payload_length = len(current_payload)
+    # đđo độ dài của payload hiện tại 
+    current_length = len(current_payload)
 
-    if payload_length > 15 and not "bypass" in current_payload:
-        print(f"vũ khí hợp lệ [{current_payload}]")
+ # ─── TẦNG 1: KIỂM TRA ĐỘ DÀI ───
 
-print(" -------- QUÉT THÀNH CÔNG----------")
+if current_length >10:
+
+    current_has_admin = "admin" in current_payload 
+    current_has_bypass = "bypass" in current_payload
+
+ # ─── TẦNG 2 (LỒNG BÊN TRONG): KIỂM TRA TỪ KHÓA ───
+if current_has_admin or current_has_bypass:
+
+    current_status = "ok"
+    print(f"[{current_status}]:[{current_payload}]")
+
+print ("======== ok ============")
