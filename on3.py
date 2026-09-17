@@ -12,15 +12,15 @@ for current_payload in payload_box:
 
  # ─── TẦNG 1: KIỂM TRA ĐỘ DÀI ───
 
-if current_length >10:
+    if current_length >10:
 
-    current_has_admin = "admin" in current_payload 
-    current_has_bypass = "bypass" in current_payload
+       current_has_admin = "admin" in current_payload 
+       current_has_bypass = "bypass" in current_payload
 
  # ─── TẦNG 2 (LỒNG BÊN TRONG): KIỂM TRA TỪ KHÓA ───
-if current_has_admin or current_has_bypass:
+       if current_has_admin or current_has_bypass:
 
-    current_status = "ok"
-    print(f"[{current_status}]:[{current_payload}]")
+           current_status = "ok"
+           print(f"[{current_status}]:[{current_payload}]")
 
-print ("======== ok ============")
+           print ("======== ok ============")
