@@ -1,18 +1,18 @@
-# vd để hiểu continue
-num_box = [1, 2, 3, 4, 5]
+# continue+ break
+cmd_box = ["short", "force_bypass_run", "user_login_warn", "admin_power_bypass", "core_hack_safe"]
 
-print("--------- BẮT ĐẦU QUÈT KIỂM TRA PHẦN CỨNG ---------")
+vaild_count=0
+for current_cmd in cmd_box:
 
-for current_num in num_box:
-    print(f"\n[Vòng lặp] Xét số hiện tại: {current_num}")
-    
-    # TẦNG 1: Bộ lọc tìm RÁC. Ở đây, số 3 chính là RÁC!
-    if current_num == 3:
-        print("⚡ Phát hiện SỐ 3 là RÁC! Lệnh continue kích hoạt -> VỨT LẬP TỨC!")
-        continue  # Máy tính quay xe ngay tại đây, nhảy lên bốc số 4!
-        
-    # TẦNG 2: ĐÂY CHÍNH LÀ CÔNG VIỆC NẶNG NỀ (Sẽ bị vứt bỏ nếu gặp continue)
-    print(f"   [RAM] -> Đang nạp dữ liệu số {current_num} vào bộ nhớ...")
-    print(f"   [CPU] -> Đang tốn sức xử lý thuật toán cho số {current_num}...")
+    current_length = len(current_cmd)
+    if current_length <=5:
+        continue
 
-print("\n--------- KIỂM TRA KẾT THÚC ---------")
+    current_has_bypass = "bypass" in current_cmd
+    if not current_has_bypass:
+        continue
+    print(f"{current_cmd} length :{current_length}")
+    vaild_count=vaild_count+1
+
+    if vaild_count == 3:
+        break
